@@ -2,8 +2,9 @@
 <html>
 
 <head>
+    <link rel="icon" type="image/png" href="icons/short_logo_CA.png"/>
 
-    <title>Code Academy</title>
+   <title>Code Academy</title>
     <meta name="description" content="Code Academy 30 Days Bootcamp">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&family=Roboto:wght@100;300;400;500&display=swap"
         rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 </head>
 
@@ -23,36 +23,36 @@
 
     <!-- header -->
     <div class="header">
-       <div class="desktop-size">
-           <div class="header-wrapper">
-               <a href="/">
-                   <div class="logo">
-                       <img src="images/original_logo.png" alt="code academy logo">
-                   </div>
-               </a>
-               <div class="header_menu">
-                   <a href="https://codeacademy.mk/courses" target="_blank">
-                      <div class="menu_item">
-                          Академии
-                      </div>
-                   </a>
-                   <a href="https://codeacademy.mk/lectures" target="_blank">
-                    <div class="menu_item">
-                        Предавања
+        <div class="desktop-size">
+            <div class="header-wrapper">
+                <!-- <a href="/"> -->
+                    <div class="logo">
+                        <img src="images/original_logo.png" alt="code academy logo">
                     </div>
-                 </a>
-                 <a href="https://codeacademy.mk/team" target="_blank">
-                    <div class="menu_item">
-                        Ментори & Тим
-                    </div>
-                 </a>
-                 <a href="https://codeacademy.mk/career" target="blank">
-                    <div class="menu_item">
-                        Вработување
-                    </div>
-                 </a>
-                 <a href="#apply">
-                    <div class="menu_item" style="background: #0081ff;
+                <!-- </a> -->
+                <div class="header_menu">
+                    <a href="https://codeacademy.mk/courses" target="_blank">
+                        <div class="menu_item">
+                            Академии
+                        </div>
+                    </a>
+                    <a href="https://codeacademy.mk/lectures" target="_blank">
+                        <div class="menu_item">
+                            Предавања
+                        </div>
+                    </a>
+                    <a href="https://codeacademy.mk/team" target="_blank">
+                        <div class="menu_item">
+                            Ментори & Тим
+                        </div>
+                    </a>
+                    <a href="https://codeacademy.mk/career" target="blank">
+                        <div class="menu_item">
+                            Вработување
+                        </div>
+                    </a>
+                    <a href="#apply">
+                        <div class="menu_item" style="background: #0081ff;
                     font-size: 18px;
                     text-align: center;
                     padding: 10px 15px 10px 15px;
@@ -63,32 +63,81 @@
                     transition: all .3s ease;
                     font-family: Roboto;
                     width: 120px;">
-                        Аплицирај
-                    </div>
-                 </a>
-               </div>
-           </div>
-       </div>
+                            Аплицирај
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- mobile header -->
     <div class="mobile-header">
         <div class="size">
             <div class="dual-wrapper">
-               <div class="mobile-logo"><img src="icons/big-logo.png"></div>
-                <div class="mobile-menu-button"><img src="icons/more.png"></div>
+                <div class="mobile-logo"><img src="icons/big-logo.png"></div>
+                <div class="mobile-menu-button" id="show_mobile_menu">
+                    <img src="icons/more.png">
+                </div>
             </div>
+            <!-- mobile drop down -->
+              <div class="mobile_drop_down" id="full_mobile_menu" style="display: none;">
+                <a href="https://codeacademy.mk/courses" target="_blank">
+                    <div class="mobile_item">Академии</div>
+                </a>
+                <a href="https://codeacademy.mk/lectures" target="_blank">
+                    <div class="mobile_item">Предавања</div>
+                </a>
+                <a href="https://codeacademy.mk/team" target="_blank">
+                    <div class="mobile_item">Ментори & Тим</div>
+                </a>
+                <a href="https://codeacademy.mk/career" target="_blank">
+                    <div class="mobile_item">Вработување</div>
+                </a>
+                <a href="#applym">
+                    <div class="mobile_item" style="background-color:#0081ff; color: white;">Аплицирај</div>
+                </a>
+            </div>
+            
         </div>
     </div>
+    <!-- script -->
+<script type="text/javascript">
+    $(document).ready(function(){
+
+       let opened = false;
+        
+       document.addEventListener('click', function() {
+           if(opened) {
+            $("#full_mobile_menu").slideToggle();
+               opened = false;
+           }
+        })
+        $("#show_mobile_menu").click(function(e) {
+            e.stopImmediatePropagation();
+
+            console.log("button clicked");
+            if(!opened) {
+               $("#full_mobile_menu").slideToggle();
+               opened = true;
+            } else {
+               $("#full_mobile_menu").slideToggle();
+               opened = false;
+            }
+        })
+
+    })
+</script>
+<!--  -->
 
 
     <!-- Heading mobile section -->
     <div class="heading-section">
         <div class="size">
             <div class="heading-title">Работи за компании кои го менуваат светот</div>
-               <div class="heading-desc">
-                  <div class="live-dot">
-                     <div class="green-dot">НОВО</div>
+            <div class="heading-desc">
+                <div class="live-dot">
+                    <div class="green-dot">НОВО</div>
                 </div> Апликациите се во тек <span class="right-arrow"><img src="icons/right.png"></span>
             </div>
         </div>
@@ -97,19 +146,19 @@
     <!-- desktop heading section -->
     <div class="desktop-heading-section">
         <div class="first-left">
-          <div class="heading-desc-desktop">
-            <div class="live-dot-desktop">
-                <div class="green-dot-desktop">НОВО</div>
+            <div class="heading-desc-desktop">
+                <div class="live-dot-desktop">
+                    <div class="green-dot-desktop">НОВО</div>
                 </div> Апликациите се во тек <span class="right-arrow"><img src="icons/right.png"></span>
             </div>
             <div>
                 <h1 class="heading-title-desktop">Работи за компании кои го менуваат светот</h1>
             </div>
-         </div>
-         <div class="first-right">
-            <img src="icons/arrow-right.png" alt="right">
-         </div>
         </div>
+        <div class="first-right">
+            <img src="images/world.jpg" alt="right">
+        </div>
+    </div>
     </div>
 
     <!--  <div class="faang-section"><img src="icons/companies.png"></div>-->
@@ -117,9 +166,9 @@
     <!-- how section -->
     <div class="how-section">
         <div class="size">
-           <div class="heading-graphics"><img src="icons/top.png"></div>
-           <div class="mid-heading">Која е приказната?</div>
-           <div class="heading-graphics"><img src="icons/bottom.png"></div>
+            <div class="heading-graphics"><img src="icons/top.png"></div>
+            <div class="mid-heading">Која е приказната?</div>
+            <div class="heading-graphics"><img src="icons/bottom.png"></div>
         </div>
     </div>
 
@@ -141,7 +190,7 @@
 
     <div class="how-section">
         <div class="size">
-           <div class="mid-heading-text">Code Academy, со новата Eduployment програма ги спојува компаниите кои имаат
+            <div class="mid-heading-text">Code Academy, со новата Eduployment програма ги спојува компаниите кои имаат
                 потреба од програмери со луѓе кои
                 сакаат да станат програмери</div>
             <div class="heading-graphics"><img src="icons/bottom.png"></div>
@@ -174,14 +223,14 @@
                 30+ партнер компании
             </div>
             <div class="heading-graphics"><img src="icons/marko-money.png"></div>
-            <div class="mid-heading">Марко сега работи за Американска компанија со флексибилно работно време.
+            <div class="mid-heading">Марко сега работи за американска компанија со флексибилно работно време.
             </div>
         </div>
     </div>
 
 
     <!-- apply box -->
-    <div class="apply-box">
+    <div class="apply-box" id="applym">
         <img src="icons/square_card_background.png" width="100%" height="760px" style="border-radius: 10px;">
         <div class="prograss-bar">
             <span class="time-icon"> <img src="icons/time.png"></span>
@@ -191,15 +240,17 @@
         <div class="apply-text">
             <p>Зголеми си ги шансите да бидеш примен во Eduployment програмата аплицирајќи
                 сега</p>
-            <p>За да аплицираш потребно е само да внесеш име, презиме, email и телефон.</p>
+            <p>За да аплицираш потребно е само да внесеш име, презиме, е-маил и телефон.</p>
         </div>
 
         <form action="app-process.php" method="post" style="position: absolute; z-index: 5; top:442px;padding: 14px;">
             <input class="form-input" name="full_name" type="text" placeholder="Име и Презиме" required>
-            <input class="form-input" name="email" type="email" placeholder="eMail адреса" required>
+            <input class="form-input" name="email" type="email" placeholder="e-маил адреса" required>
             <input class="form-input" name="tel" type="number" placeholder="Телефон" required>
+            <button type="submit" class="apply-box-btn">
+                Аплицирај</button>
+
         </form>
-        <div class="apply-box-btn">Аплицирај</div>
     </div>
 
 
@@ -217,7 +268,7 @@
             <div class="list-el"><img src="icons/check-mark.png"> 600+ Успешни приказни</div>
             <div class="list-el"><img src="icons/check-mark.png"> 30+ Партнер компании</div>
             <div class="list-el"><img src="icons/check-mark.png"> 5 години постоење</div>
-            <div class="list-el"><img src="icons/check-mark.png"> Personal Success coach</div>
+            <div class="list-el"><img src="icons/check-mark.png"> Тренер за личен развој</div>
             <div class="list-el"><img src="icons/check-mark.png"> 12 Искусни ментори</div>
             <div class="list-el"><img src="icons/check-mark.png"> 4 Предавални</div>
             <div class="list-el"><img src="icons/check-mark.png"> Месечни хакатони за вработување</div>
@@ -228,11 +279,12 @@
             <!-- <img src="icons/lokacija.jpeg" width="100%"> -->
             <div id="google-map">
                 <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.7446239231413!2d21.432203816001355!3d41.984292466739994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415ce9ae338ab%3A0x252f81ab43c8360b!2sAnton%20Popov%2033%2C%20Skopje%201000!5e0!3m2!1sen!2smk!4v1629296219251!5m2!1sen!2smk"
-                        width="100%" style="border:0; margin-bottom: 10px;" allowfullscreen="" loading="lazy">
-                    
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.7446239231413!2d21.432203816001355!3d41.984292466739994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415ce9ae338ab%3A0x252f81ab43c8360b!2sAnton%20Popov%2033%2C%20Skopje%201000!5e0!3m2!1sen!2smk!4v1629296219251!5m2!1sen!2smk"
+                    width="100%" style="border:0; margin-bottom: 10px;" allowfullscreen="" loading="lazy">
+
                 </iframe>
             </div>
+        </div>
     </div>
 
 
@@ -242,8 +294,8 @@
         <div class="size">
             <div class="footer-heading">Следи не на нашите социјални медиуми</div>
             <div class="social-icons-wrapper">
-                <div class="social-icon"><img src="icons/facebook.png"> </div>
-                <div class="social-icon"><img src="icons/instagram.png"> </div>
+               <a href="https://www.facebook.com/CodeAcademyMacedonia" target="_blank" style="text-decoration: none;"> <div class="social-icon"><img src="icons/facebook.png"> </div> </a>
+               <a href="https://www.instagram.com/codeacademymk/" target="_blank" style="text-decoration: none;"> <div class="social-icon"><img src="icons/instagram.png"> </div> </a>
             </div>
             <div class="copyright">© Code Academy - All Rights Reserved</div>
         </div>
@@ -254,11 +306,14 @@
 
 
     <!-- inovation -->
+    
     <div class="inovation">
-        <h2>Која е иновацијата?</h2>
-        <p class="paragraph1">Корона кризата масовно ја зголеми побарувачката за развој на софтвер.</p>
-         <p class="paragraph2">Компании од целиот свет што развиваат софтвер во Македонија имаат потреба за најбрзо можно време да обучат и вработат илјадници нови програмери.</p>
+        <h2> Која е иновацијата?</h2>
+        <p class="paragraph1"><img src="icons/imp1.png" width="40px" alt="imp" style="padding-right: 10px;"> Корона кризата масовно ја зголеми побарувачката за развој на софтвер.</p>
+        <p class="paragraph2"> <img src="icons/imp1.png" width="40px" alt="imp" style="padding-right: 10px;"> Компании од целиот свет што развиваат софтвер во Македонија имаат потреба за најбрзо
+            можно време да обучат и вработат илјадници нови програмери.</p>
     </div>
+   
 
     <!-- meet marko -->
     <div class="marko">
@@ -270,7 +325,8 @@
             </div>
             <div class="marko1-text">
                 <h2>Запознај го Марко</h2>
-                <p>Марко е правник, меѓутоа, тој не е задоволен од неговата плата. Тој има другари кои во меѓувреме станале програмери и сега заработуваат 3 до 5 пати повеќе од него.</p>
+                <p>Марко е правник, меѓутоа, тој не е задоволен од неговата плата. Тој има другари кои во меѓувреме
+                    станале програмери и сега заработуваат 3 до 5 пати повеќе од него.</p>
             </div>
         </div>
 
@@ -282,7 +338,8 @@
         <!-- marko 2 -->
         <div class="marko2">
             <div class="marko2-text">
-                <p>Марко знае дека има потенцијал да учи нови работи и тој аплицира на Eduployment програмата на Code Academy.</p>
+                <p>Марко знае дека има потенцијал да учи нови работи и тој аплицира на Eduployment програмата на
+                    Code Academy.</p>
                 <p>Марко, паралелно со својата работа ги посетува и предавањата во живо.</p>
             </div>
             <div class="marko2-img">
@@ -303,11 +360,13 @@
             </div>
             <div class="marko3-text">
                 <p>Марко се стекна со <b>сертификат</b> за успешно завршена обука на програмирање.</p>
-                <p>По завршувањето на 7 месечната обука, Code Academy го <b>вработува</b> Марко во една од нивните <b>30+ партнер компании.</b></p>
+                <p>По завршувањето на 7 месечната обука, Code Academy го <b>вработува</b> Марко во една од нивните
+                    <b>30+ партнер компании.</b>
+                </p>
             </div>
         </div>
 
-         <!-- arrow 3 -->
+        <!-- arrow 3 -->
         <div class="pic3">
 
         </div>
@@ -315,7 +374,9 @@
         <!-- marko 4 -->
         <div class="marko4">
             <div class="marko4-text">
-              <b><p>Марко сега работи за американска компанија со флексибилно работно време.</p></b>
+                <b>
+                    <p>Марко сега работи за американска компанија со флексибилно работно време.</p>
+                </b>
             </div>
             <div class="marko4-img">
                 <img src="images/marko-moeney.png" alt="marko money">
@@ -326,29 +387,28 @@
 
     <!-- apply -->
     <div class="apply" id="apply">
-     <div class="apply-left">
-        <div class="d-progress-bar">
-            <span class="d-time-icon">
-                <img src="/icons/time.png" alt="">
-            </span>
-            " Апликациите се во тек "
+        <div class="apply-left" style="position: relative;">
+            <div class="d-prograss-bar">
+                <span class="d-time-icon"> <img src="icons/time.png"></span>
+                Апликациите се во тек
+            </div>
+            <div>
+                <h2>Времето истекува</h2>
+                <p>Зголеми си ги шансите да бидеш примен на Eduployment програмата аплицирајќи сега.</p>
+                <p>За да аплицираш потребно е само да внесеш име, презиме, email и телефон.</p>
+            </div>
         </div>
-        <div>
-            <h2>Времето истекува</h2>
-            <p>Зголеми си ги шансите да бидеш примен на Eduployment програмата аплицирајќи сега.</p>
-            <p>За да аплицираш потребно е само да внесеш име, презиме, email и телефон.</p>
+        <div class="apply-right">
+
+            <form action="app-process.php" method="post" style="z-index: 5; top:442px;">
+                <input class="form-input" name="full_name" type="text" placeholder="Име и Презиме" required> <br>
+                <input class="form-input" name="email" type="email" placeholder="e-маил адреса" required> <br>
+                <input class="form-input" name="tel" type="number" placeholder="Телефон" required>
+                <button type="submit" class="d-apply-btn">Аплицирај</button>
+
+            </form>
         </div>
-     </div>
-     <div class="apply-right">
-        
-        <form action="app-process.php" method="post" style="z-index: 5; top:442px;">
-            <input class="form-input" name="full_name" type="text" placeholder="Име и Презиме" required> <br>
-            <input class="form-input" name="email" type="email" placeholder="eMail адреса" required> <br>
-            <input class="form-input" name="tel" type="number" placeholder="Телефон" required>
-        </form>
-        <div class="d-apply-btn">Аплицирај</div>
-     </div>
-     
+
     </div>
 
     <!-- desktop success section -->
@@ -356,11 +416,12 @@
         <div class="success-left">
             <h2>Не си слушнал за Code Academy?</h2>
             <p> Прашај некој од нашите 600+ досега успешно обучени и вработени студенти, тие нека кажат за нас.</p>
-            <a href="tel:078366289"><span><img width="20px" src="icons/call.png" alt="check"></span> Прашај студент</a>
+            <a href="tel:078366289"><span><img width="20px" src="icons/call.png" alt="check"></span> Прашај
+                студент</a>
             <p><span><img src="images/check.png" alt="check"></span> 600+ Успешни приказни</p>
             <p><span><img src="images/check.png" alt="check"></span>30+ Партнер компании</p>
             <p><span><img src="images/check.png" alt="check"></span>5 години постоење</p>
-            <p><span><img src="images/check.png" alt="check"></span>Personal Success coach</p>
+            <p><span><img src="images/check.png" alt="check"></span>Тренер за личен развој</p>
             <p><span><img src="images/check.png" alt="check"></span>12 Искусни ментори</p>
 
             <p><span><img src="images/check.png" alt="check"></span>4 Предавални</p>
@@ -370,23 +431,43 @@
         <div class="success-right">
             <img width="500px" src="images/newlivelec.jpg" alt="students">
         </div>
-   </div>
-
-   <!-- desktop map -->
-   <div class="map">
-       <div>
-           <h2>Ти требаат повеќе информации?</h2>
-           <a href="tel:078366289"><span style="padding-right: 10px;"><img width="20px" src="icons/call.png" alt="check"></span>078366289</a>
-            <span style="padding-left: 20px;"> <b> Адреса: </b> ул. "Антон Попов" бр. 33</span>
-       </div>
-       <div id="google-map">
-        <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.7446239231413!2d21.432203816001355!3d41.984292466739994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415ce9ae338ab%3A0x252f81ab43c8360b!2sAnton%20Popov%2033%2C%20Skopje%201000!5e0!3m2!1sen!2smk!4v1629296219251!5m2!1sen!2smk"
-                width="90%" height="400" style="border:0; margin-top: 50px;" allowfullscreen="" loading="lazy">
-            
-        </iframe>
     </div>
-   </div>
+
+    <!-- desktop map -->
+    <div class="map">
+        <div>
+            <h2>Ти требаат повеќе информации?</h2>
+            <a href="tel:070307693"><span style="padding-right: 10px;"><img width="20px" src="icons/call.png"
+                        alt="check"></span>070307693</a>
+            <span style="padding-left: 20px;"> <b> Адреса: </b> ул. "Антон Попов" бр. 33</span>
+        </div>
+        <div id="google-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.7446239231413!2d21.432203816001355!3d41.984292466739994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415ce9ae338ab%3A0x252f81ab43c8360b!2sAnton%20Popov%2033%2C%20Skopje%201000!5e0!3m2!1sen!2smk!4v1629296219251!5m2!1sen!2smk"
+                width="100%" height="400" style="border:0; margin-top: 50px;" allowfullscreen="" loading="lazy">
+
+            </iframe>
+        </div>
+    </div>
+
+    <!-- desktop footer -->
+    <div class="desktop-footer">
+        <div class="footer-size">
+            <div>
+                <h3>Следи не на нашите социјални медиуми</h3>
+            </div>
+            <div>
+               <a href="https://www.facebook.com/CodeAcademyMacedonia" target="_blank"> <img style="filter: invert(1); width: 35px; padding-top: 18px;" src="icons/facebook.png" alt="facebook icon"></a>
+               <a href="https://www.instagram.com/codeacademymk/" target="_blank"> <img style="filter: invert(1); width: 35px; padding-left: 15px; padding-top: 18px;" src="icons/instagram.png" alt="instagram icon"> </a>
+            </div>
+        </div>
+        <div class="ca-size" style="border-bottom:1px solid white; padding-top: 12px;">
+            
+        </div>
+        <div class="ca-size" style="text-align: center;">
+            <p>&copy; Code Academy - All rights reserved.</p>
+        </div>
+    </div>
 
 
 
